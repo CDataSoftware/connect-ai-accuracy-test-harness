@@ -16,7 +16,7 @@ The harness captures comprehensive metrics including token usage, API costs, exe
 
 ## Test Matrix
 
-The harness tests **16 prompts** across **4 data sources** using **5 MCP providers**:
+The harness tests **16 prompts** across **4 data sources** using **6 MCP providers**:
 
 ### Data Sources & Prompts
 
@@ -31,8 +31,9 @@ The harness tests **16 prompts** across **4 data sources** using **5 MCP provide
 
 | Provider | Auth Type | Supported Data Sources |
 |----------|-----------|----------------------|
-| CData Connect AI | Basic Auth | CRM, Project Management, Data Warehouse, ERP (100+ sources) |
+| CData Connect AI | Basic Auth | CRM, Project Management, Data Warehouse, ERP (350+ sources) |
 | CRM Native | Bearer | CRM only |
+| ERP Native | Bearer | ERP only |
 | iPaaS Provider | URL Token | CRM, Project Management, Data Warehouse |
 | MCP Gateway | URL Token | CRM, Project Management |
 | Unified API | stdio/Bearer | CRM, Project Management |
@@ -135,6 +136,12 @@ CRM_NATIVE_MCP_URL=https://example.com/mcp
 CRM_NATIVE_BEARER_TOKEN=your_token
 ```
 
+**For ERP Native:**
+```bash
+ERP_NATIVE_MCP_URL=https://your_account_id.myerp.com/mcp
+ERP_NATIVE_BEARER_TOKEN=your_token
+```
+
 **For iPaaS Provider:**
 ```bash
 IPAAS_MCP_URL=https://example.com/mcp
@@ -216,8 +223,7 @@ COST BREAKDOWN:
 ├── validate_config.py      # Configuration validation utility
 ├── requirements.txt        # Python dependencies
 ├── .env.example            # Environment template
-├── LICENSE                 # MIT License
-└── CLAUDE.md               # AI assistant context
+└── LICENSE                 # MIT License
 ```
 
 ## Test Prompts Reference
